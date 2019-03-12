@@ -3,7 +3,7 @@
     <!-- The navigation drawer -->
     <Drawer />
 
-    <v-content class="hide-overflow" style="padding-left: 300px">
+    <v-content class="hide-overflow" style="padding-left: 300px" id="mainContent">
       <div>
         <!-- The background image cover with the name -->
         <Hero />
@@ -46,6 +46,14 @@ export default {
 
 <!-- Global styling -->
 <style>
+@media screen and (max-width: 960px) {
+  #mainContent {
+    padding-left: 0 !important;
+  }
 
+  #mainDrawer {
+    display: none;
+  }
+}
 </style>
 

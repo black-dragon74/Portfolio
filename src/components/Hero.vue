@@ -9,10 +9,10 @@
             align-end
             pa-5 text-xs-right>
                 <div>
-                    <div class="text-uppercase display-4">
+                    <div class="text-uppercase display-3">
                     Nick
                 </div>
-                <h2 class="primary--text text-uppercase display-4">Software Engineer</h2>
+                <h1 class="primary--text text-uppercase display-2">Software Engineer</h1>
                 </div>
             </v-layout>
     </v-img>
