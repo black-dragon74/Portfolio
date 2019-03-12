@@ -3,12 +3,16 @@
             :src="heroImage"
             style="height: 100vh;">
 
-            <v-layout fill-height="true" justify-end="true" align-end="true" class="pa-5 text-xs-right">
+            <v-layout
+            fill-height
+            justify-end
+            align-end
+            pa-5 text-xs-right>
                 <div>
-                    <div class="text-uppercase display-3">
-                    Niraj Yadav
+                    <div class="text-uppercase display-4">
+                    Nick
                 </div>
-                <h1 class="primary--text text-uppercase display-4">Software Engineer</h1>
+                <h2 class="primary--text text-uppercase display-4">Software Engineer</h2>
                 </div>
             </v-layout>
     </v-img>

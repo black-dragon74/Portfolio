@@ -1,19 +1,24 @@
 <template>
     <v-navigation-drawer fixed dark app id="mainDrawer">
-        <v-layout align-center="true" fill-height="true" py-5 justify-center="true" column="true">
+        <v-layout
+        align-center
+        fill-height
+        py-5
+        justify-center
+        column>
             
             <!-- The name typed logo -->
             <h2 class="display-3 font-weight-black primary--text mb-2">NK</h2>
 
             <!-- Developer name -->
-            <div class="display-1 mb-2">Niraj Yadav</div>
+            <div class="display-1 mb-2">Nick</div>
 
             <!--  Designation -->
             <span class="title font-weight-light mb-5">Software Engineer</span>
 
             <!-- Buttons -->
             <div v-for="item in navItems" :key="item.title">
-                <v-btn class="mb-3 text-capitalize subheading font-weight-medium" flat dark :target="item.link">{{ item.title }}</v-btn>
+                <v-btn class="mb-3 text-capitalize subheading font-weight-medium" flat dark :href="item.link">{{ item.title }}</v-btn>
             </div>
 
             <!-- Social Icons -->
@@ -40,6 +45,7 @@ export default {
     data () {
         return {
             navItems: [
+                {"title": "Intro", "link": "#"},
                 {"title": "About Me", "link": "#about"},
                 {"title": "Experience", "link": "#experience"},
                 {"title": "Skills & Education", "link": "#skills"},
