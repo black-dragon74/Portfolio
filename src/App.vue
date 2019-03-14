@@ -18,6 +18,12 @@
 
             <!-- The skills section -->
             <Skills />
+
+            <!-- The portfolio section -->
+            <Portfolio />
+
+            <!-- The contact section, last one :D -->
+            <Contact />
         </div>
 
       </div>
@@ -34,7 +40,9 @@ export default {
     Hero: () => import('@/components/Hero'),
     About: () => import('@/components/About'),
     Experience: () => import('@/components/Experience'),
-    Skills: () => import('@/components/Skills')
+    Skills: () => import('@/components/Skills'),
+    Portfolio: () => import('@/components/Portfolio'),
+    Contact: () => import('@/components/Contact')
   },
   data () {
     return {
