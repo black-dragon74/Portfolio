@@ -9,7 +9,7 @@
             </v-flex>
 
             <!-- Sub desc flex -->
-            <v-flex xs12 md5 mb-4 pr-5>
+            <v-flex xs12 md5 mb-4 :pr-5="$vuetify.breakpoint.mdAndUp">
                 <h2 class="primary--text title font-weight-light text-uppercase mb-2">What can I do for you?</h2>
                 <div class="subheading mb-5">
                     Have anything that you would like to say to me? Well you are more than welcome to do so. Please fill out the form below and hit that send button or else get in touch using the details given along with the form.
@@ -27,8 +27,8 @@
                         <v-flex xs12>
                             <v-text-field
                             label="Name"
+                            solo-inverted
                             flat
-                            solo
                             :rules="nonEmptyRule"
                             required
                             ></v-text-field>
@@ -38,7 +38,7 @@
                             <v-text-field
                             label="Email"
                             flat
-                            solo
+                            solo-inverted
                             :rules="emailRules"
                             required
                             ></v-text-field>
@@ -49,14 +49,14 @@
                             label="Subject"
                             :rules="nonEmptyRule"
                             flat
-                            solo
+                            solo-inverted
                             required
                             ></v-text-field>
                         </v-flex>
 
                         <v-flex xs12>
                             <v-textarea
-                            solo
+                            solo-inverted
                             flat
                             :rules="nonEmptyRule"
                             label="Message"
