@@ -28,7 +28,7 @@
                         md7>
                             <div class="subheading mb-5 mb-0">
                                 <p>
-                                    I am front-end developer that specializes in Vue and Veutify development. Consectetur adipisicing elit, sed do eiusmod tempor. Quisque viverra quam urna, ac commodo augue convallis et. In vel nisl imperdiet, cursus elit ac, efficitur sem. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quom placerat facer possim assum.
+                                    {{ aboutMe }}
                                 </p>
 
                                 <!--  The Image -->
@@ -56,7 +56,6 @@
                                     <div class="mb-3">Location</div>
                                     <div class="mb-3">Email</div>
                                     <div class="mb-3">Phone</div>
-                                    <div>Telegram</div>
                                 </v-flex>
 
                                 <!-- Flex 2 as info -->
@@ -64,10 +63,9 @@
                                 xs6
                                 no-wrap
                                 subheading>
-                                    <div class="mb-3">Somewhere in India</div>
+                                    <div class="mb-3">Jaipur, RJ, India</div>
                                     <div class="mb-3">me@nicksuniversum.com</div>
-                                    <div class="mb-3">123456789</div>
-                                    <div>t.me/ydvnick</div>
+                                    <div class="mb-3">+91-8302716971</div>
                                 </v-flex>
                             </v-layout>
                         </v-flex>
@@ -140,11 +138,16 @@
 export default {
     data () {
         return {
+            aboutMe: "Hello there! I am Niraj Kumar Yadav. You can call me Nick. I am a computer programmer and a tech enthusiast. I have over 7+ years of programming experience in various languages. For me, sky's the limit.",
+
             aboutItems: [
-                {"title": "Web Development", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor. Lorem ipsum dolor sit amet consectetur adipisicing elit, eiusmod tempor. Proin luctus nulla elit, vitae varius massa.Etiam massa sapien, ultricies quis enim at, tempor fringilla metus. Nulla rhoncus enim sed consectetur. Mauris et eros feugiat, tincidunt eget, dictum neque. Maecenas dapibus sodales magna, eget lectus vehicula non."},
-                {"title": "Design", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor. Lorem ipsum dolor sit amet consectetur adipisicing elit, eiusmod tempor. Proin luctus nulla elit, vitae varius massa.Etiam massa sapien, ultricies quis enim at, tempor fringilla metus. Nulla rhoncus enim sed consectetur. Mauris et eros feugiat, tincidunt eget, dictum neque. Maecenas dapibus sodales magna, eget lectus vehicula non."},
-                {"title": "Marketing", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor. Lorem ipsum dolor sit amet consectetur adipisicing elit, eiusmod tempor. Proin luctus nulla elit, vitae varius massa.Etiam massa sapien, ultricies quis enim at, tempor fringilla metus. Nulla rhoncus enim sed consectetur. Mauris et eros feugiat, tincidunt eget, dictum neque. Maecenas dapibus sodales magna, eget lectus vehicula non."},
-                {"title": "Support", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor. Lorem ipsum dolor sit amet consectetur adipisicing elit, eiusmod tempor. Proin luctus nulla elit, vitae varius massa.Etiam massa sapien, ultricies quis enim at, tempor fringilla metus. Nulla rhoncus enim sed consectetur. Mauris et eros feugiat, tincidunt eget, dictum neque. Maecenas dapibus sodales magna, eget lectus vehicula non."}
+                {"title": "Mobile Apps", "description": "I am primarily focused on iOS App Development using Swift. I love that language. I also have made a few apps in Java and Kotlin for the Android platform."},
+                {"title": "Web Development", "description": "Count me in for any web type of web development. Be it frontend or backend. Just keep me away from Angular. I despise that. I have good knowledge of MEAN, LAMP and LEMP stack."},
+                {"title": "Unix Kernel", "description": "I have written a few open source driver for the UNIX based Darwin kernel. So yeah, I am pretty familiar with that too."},
+                {"title": "PHP Frameworks", "description": "I know this is not something to boast of but yeah I have pretty decent knowledge of Laravel and Codeigniter. Wrote an ERP software using them. All by myself ;)"},
+                {"title": "REST APIs", "description": "You very well know what an API is, right? Well I know how to build one. My goto choice is Flask but I speak Node too."},
+                {"title": "Linux Server", "description": "From deploying my own server in the cloud to managing/maintaining it. I know it all. The current website you're looking at is served directly off my own server running LEMP stack."},
+                {"title": "Miscellaneous", "description": "I know many other languages like: C, Objective-C, C++, C#, Scala, Java, Ruby, Perl, Visual Basic, Shell Script, AppleScript, TypeScript just to name a few. More details are available on my GitHub repo."},
             ]
         }
     }

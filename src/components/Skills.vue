@@ -22,7 +22,7 @@
                     <h2 class="display-2 font-weight-bold primary--text mb-4">What I Know</h2>
                     <blockquote style="max-width: 230px;">
                         <p class="subheading font-weight-light font-italic">
-                            I am somone doing something. Typing some junk here just to fill the space.
+                            Need a more professional description of me? Well, here's exactly that ;)
                         </p>
                         <footer class="text-xs-center">
                             <v-btn color="primary">Download CV</v-btn>

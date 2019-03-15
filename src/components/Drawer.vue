@@ -45,7 +45,7 @@ export default {
     data () {
         return {
             navItems: [
-                {"title": "Intro", "link": "#"},
+                {"title": "Hey", "link": "#"},
                 {"title": "About Me", "link": "#about"},
                 {"title": "Experience", "link": "#experience"},
                 {"title": "Skills & Education", "link": "#skills"},
