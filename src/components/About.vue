@@ -33,7 +33,7 @@
 
                                 <!--  The Image -->
                                 <v-img
-                                src="https://material-portfolio-dark.vuetifyjs.com/img/signature.0302022c.png"
+                                :src="require('@/assets/signature.png')"
                                 width="150"
                                 class="ml-auto">
                                 </v-img>

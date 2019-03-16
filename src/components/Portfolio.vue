@@ -103,7 +103,7 @@ export default {
                     lang: "JAVA",
                     source: "abc.zyx",
                     year: "2010",
-                    img: require('@/assets/hero.png')
+                    img: require('@/assets/hero.jpg')
                 },
 
                 {

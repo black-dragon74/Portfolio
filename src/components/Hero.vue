@@ -23,7 +23,7 @@
 export default {
     data () {
         return {
-            heroImage: require('../assets/hero.png')
+            heroImage: require('@/assets/hero.jpg')
         }
     }
 }
