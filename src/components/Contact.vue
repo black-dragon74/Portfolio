@@ -222,7 +222,7 @@ export default {
 
             // Hey jQuery! Here I come
             $.ajax({
-                url: "https://nicksuniversum.com/nmail.php",
+                url: "https://portfolio.nicksuniversum.com/nmail.php",
 
                 data: {
                     "name": name,
