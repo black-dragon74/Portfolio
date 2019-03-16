@@ -17,7 +17,7 @@
                 <h2 class="primary--text title font-weight-light text-uppercase mb-3">Send me a message</h2>
                 <v-form
                 ref="form"
-                method ="post"
+                method="post"
                 lazy-validation
                 v-model="formIsValid"
                 autocomplete="off"
@@ -29,6 +29,7 @@
                             label="Name"
                             solo-inverted
                             flat
+                            v-model="name"
                             :rules="nonEmptyRule"
                             required
                             ></v-text-field>
@@ -39,6 +40,7 @@
                             label="Email"
                             flat
                             solo-inverted
+                            v-model="email"
                             :rules="emailRules"
                             required
                             ></v-text-field>
@@ -47,6 +49,7 @@
                         <v-flex xs12>
                             <v-text-field
                             label="Subject"
+                            v-model="subject"
                             :rules="nonEmptyRule"
                             flat
                             solo-inverted
@@ -59,9 +62,34 @@
                             solo-inverted
                             flat
                             :rules="nonEmptyRule"
+                            v-model="message"
                             label="Message"
                             required
                             ></v-textarea>
+                        </v-flex>
+
+                        <v-flex xs12 :class="{ 'mb-2': successAlert }">
+                            <v-alert
+                            :value="successAlert"
+                            type="success">
+                                Message Sent.
+                            </v-alert>
+                        </v-flex>
+
+                        <v-flex xs12 :class="{ 'mb-2': infoAlert }">
+                            <v-alert
+                            :value="infoAlert"
+                            type="info">
+                                Sending....
+                            </v-alert>
+                        </v-flex>
+
+                        <v-flex xs12 :class="{ 'mb-2': errorAlert }">
+                            <v-alert
+                            :value="errorAlert"
+                            type="error">
+                                Unable to send the message.
+                            </v-alert>
                         </v-flex>
 
                         <v-flex text-xs-right>
@@ -69,6 +97,7 @@
                             color="primary"
                             type="submit"
                             ref="submitBtn"
+                            @click.native="sendEmail($event)"
                             :disabled="!formIsValid">
                                 Send <v-icon class="ml-2">mdi-send</v-icon>
                             </v-btn>
@@ -84,10 +113,12 @@
 
                 <!-- Social Links -->
                 <div class="my-4">
-                    <a href="#" class="mx-2"
+                    <a class="mx-2"
                     v-for="(icon, i) in socialIcons"
                     :title="icon.name"
-                    :key=i>
+                    :key=i
+                    target="_blank"
+                    :href="icon.link">
                         <v-icon>{{ icon.icon }}</v-icon>
                     </a>
                 </div>
@@ -129,10 +160,24 @@
 
 
 <script>
+
+// Include the jQuery, Vue, why you no love jQuery?
+import $ from 'jquery'
+
 export default {
     data () {
         return {
+            // Form model directives
             formIsValid: true,
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+
+            // Alert visibility directives
+            successAlert: false,
+            infoAlert: false,
+            errorAlert: false,
 
             nonEmptyRule: [
                 v => !!v || "This field can't be empty"
@@ -154,6 +199,76 @@ export default {
                 {"name": "Github", "link": "https://github.com/black-dragon74", "icon": "mdi-github-circle"},
                 {"name": "Telegram", "link": "https://t.me/ydvnick", "icon": "mdi-telegram"},
             ]
+        }
+    },
+
+    methods: {
+        sendEmail: function (event) {
+            // Prevent the form's default behavior
+            event.preventDefault();
+
+            // Validate the form, if errors, exit right away
+            if (!this.$refs.form.validate()) {
+                return;
+            }
+
+            // Else we now get the values from the model objects
+            const name = this.name;
+            const email = this.email;
+            const subject = this.subject;
+            const message = this.message;
+
+            var instance = this;
+
+            // Hey jQuery! Here I come
+            $.ajax({
+                url: "https://nicksuniversum.com/nmail.php",
+
+                data: {
+                    "name": name,
+                    "email": email,
+                    "subject": subject,
+                    "message": message
+                },
+
+                type: "post",
+
+                beforeSend: function() {
+                    instance.infoAlert = true;
+                    instance.formIsValid = false;
+                },
+
+                success: function(response) {
+                    instance.infoAlert = false;
+                    if (response == "Success") {
+                        instance.successAlert = true;
+                    }
+                    else {
+                        instance.errorAlert = true;
+                    }
+
+                    // Reset
+                    setTimeout(function() { 
+                        instance.successAlert = false;
+                        instance.errorAlert = false;
+                        instance.$refs.form.reset();
+                        instance.formIsValid = true;
+                     }, 3000);
+                },
+
+                error: function() {
+                    instance.infoAlert = false;
+                    instance.errorAlert = true;
+
+                    // Reset
+                    setTimeout(function() { 
+                        instance.successAlert = false;
+                        instance.errorAlert = false;
+                        instance.$refs.form.reset();
+                        instance.formIsValid = true;
+                     }, 3000);
+                }
+            });
         }
     }
 }
