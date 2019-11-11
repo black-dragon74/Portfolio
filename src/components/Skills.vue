@@ -25,7 +25,9 @@
                             Need a more professional description of me? Well, here's exactly that ;)
                         </p>
                         <footer class="text-xs-center">
-                            <v-btn color="primary">Download CV</v-btn>
+                            <v-btn 
+                            color="primary"
+                            @click.native="downloadCV()">Download CV</v-btn>
                         </footer>
                     </blockquote>
                 </v-layout>
@@ -110,6 +112,12 @@
 
 <script>
 export default {
+    methods: {
+        downloadCV: function() {
+            alert("Resume in PDF will be available soon (let me graduate first). Apologies.");
+        }
+    },
+
     data() {
         return {
             fullIcon: 'mdi-record',

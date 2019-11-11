@@ -19,7 +19,8 @@
             class="elevation-0"
             height=600
             hide-controls
-            :cycle=false>
+            :interval="5000"
+            :cycle="true">
                 <v-carousel-item
                 v-for="(item,i) in items"
                 :key="i"
@@ -29,8 +30,8 @@
                     height=100%>
                         <!-- The caoursel content is contained in the sheet -->
                         <div class="text-xs-center mb-5">
-                            <h2 class="primary--text title font-weight-light mb-1">Advanced Library Management</h2>
-                            <span class="subheading">Created for fun</span>
+                            <h2 class="primary--text title font-weight-light mb-1">{{ item.title }}</h2>
+                            <span class="subheading">{{ item.subtitle }}</span>
                         </div>
 
                         <!-- The description of the current project -->
@@ -61,7 +62,7 @@
                                                 <v-icon color="primary">mdi-github-box</v-icon> 
                                             </v-list-tile-action>
                                             <v-list-tile-title class="mr-2">
-                                                <a :href="item.source" class="white--text">External Link <v-icon>mdi-link-variant</v-icon></a>
+                                                <a :href="item.source" class="white--text" target="_blank">External Link <v-icon>mdi-link-variant</v-icon></a>
                                             </v-list-tile-title>
                                         </v-list-tile>
 
@@ -78,8 +79,9 @@
                             <!-- The flex that will be hidden on small and down -->
                             <v-flex hidden-sm-and-down>
                                 <v-img
-                                height=350
+                                height=400
                                 width=500
+                                :aspect-ratio="1920/1080"
                                 contain
                                 :src="item.img"
                                 class="mx-auto"></v-img>
@@ -99,44 +101,77 @@ export default {
         return {
             items: [
                 {
-                    desc: "A library management system written in JAVA. Uses MySQL for the database management. All the data is encrypted using BCrypt. This was my first big project and was coded by me in 7th Grade.",
-                    lang: "JAVA",
-                    source: "abc.zyx",
-                    year: "2010",
-                    img: require('@/assets/hero.jpg')
+                    title: "Take2 Films & Equipments",
+                    subtitle: "Rentals Website",
+                    desc: "A website created for Take2 Films, a production house based off New Delhi, India. The site features full rentals booking and equiry system. The website is fully responsive.",
+                    lang: "PHP, MySQL",
+                    source: "http://take2films.co.in",
+                    year: "2019",
+                    img: require('@/assets/work/take2.png')
                 },
-
                 {
-                    desc: "A library management system written in JAVA. Uses MySQL for the database management. All the data is encrypted using BCrypt. This was my first big project and was coded by me in 7th Grade.",
-                    lang: "JAVA",
-                    source: "abc.zyx",
-                    year: "2010",
-                    img: ""
+                    title: "Nick\'s Universum",
+                    subtitle: "Blogging Website",
+                    desc: "A personal blogging website created by Nick for writing his feelings and thoughts. The website is fully responsive and provides a reader mode for true reading experience.",
+                    lang: "Wordpress",
+                    source: "http://nicksuniversum.com",
+                    year: "2016",
+                    img: require('@/assets/work/blog.png')
                 },
-
                 {
-                    desc: "A library management system written in JAVA. Uses MySQL for the database management. All the data is encrypted using BCrypt. This was my first big project and was coded by me in 7th Grade.",
-                    lang: "JAVA",
-                    source: "abc.zyx",
-                    year: "2010",
-                    img: ""
+                    title: "Nick\'s Portfolio",
+                    subtitle: "This portfolio website",
+                    desc: "A personal portfolio created in 1 day just because I was getting bored and also it can be used to showcase my work.",
+                    lang: "Vue.JS",
+                    source: "http://portfolio.nicksuniversum.com",
+                    year: "2019",
+                    img: require('@/assets/work/portfolio.png')
                 },
-
                 {
-                    desc: "A library management system written in JAVA. Uses MySQL for the database management. All the data is encrypted using BCrypt. This was my first big project and was coded by me in 7th Grade.",
-                    lang: "JAVA",
-                    source: "abc.zyx",
-                    year: "2010",
-                    img: ""
+                    title: "Chocolaty.in",
+                    subtitle: "A web portal for sending gifts",
+                    desc: "A website for booking and sending gifts/flowers to your loved ones.",
+                    lang: "Codeigniter",
+                    source: "http://chocolaty.in",
+                    year: "2017",
+                    img: require('@/assets/work/chocolaty.png')
                 },
-
                 {
-                    desc: "A library management system written in JAVA. Uses MySQL for the database management. All the data is encrypted using BCrypt. This was my first big project and was coded by me in 7th Grade.",
-                    lang: "JAVA",
-                    source: "abc.zyx",
-                    year: "2010",
-                    img: ""
+                    title: "MUJ Convocations",
+                    subtitle: "Convocation Registration Portal",
+                    desc: "A website created for Manipal University, Jaipur for automating convocation registrations. The website features alumni registration and a payment gateway.",
+                    lang: "Codeigniter",
+                    source: "http://convocationmuj.net",
+                    year: "2019",
+                    img: require('@/assets/work/convocation.png')
                 },
+                {
+                    title: "SNP College",
+                    subtitle: "Website for SN Pareek Women's TT College",
+                    desc: "A website for SN Pareek Women's Teacher's Training college, Pushkar. It fully features an interactive CMS so that user can update website without writing any code!",
+                    lang: "Joomla 3.x",
+                    source: "http://snpcollege.co.in",
+                    year: "2019",
+                    img: require('@/assets/work/snp_college.png')
+                },
+                {
+                    title: "SNP Advocates",
+                    subtitle: "Website for SN Pareek Advocates Group",
+                    desc: "A website for SN Pareek Advocates Group located in Jaipur & Ajmer. A fully responsive website with slick slider.",
+                    lang: "HTML, CSS & JavaScript",
+                    source: "http://snpareekadvocates.com",
+                    year: "2019",
+                    img: require('@/assets/work/snp_advocates.png')
+                },
+                {
+                    title: "Bunaai",
+                    subtitle: "Online shopping website",
+                    desc: "A website for Bunaai, A clothing brand birthed out of Jaipur. Needs no further introduction",
+                    lang: "Shopify CMS",
+                    source: "http://bunaai.com",
+                    year: "2018",
+                    img: require('@/assets/work/bunaai.png')
+                }
             ]
         }
     }
