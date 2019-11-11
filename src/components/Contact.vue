@@ -152,7 +152,7 @@
             <v-flex
             xs12 md4>
                 <v-img contain style="top: 95px;"
-                src="https://material-portfolio-dark.vuetifyjs.com/img/john-alt.7fef353c.png"></v-img>
+                :src="require('@/assets/pic_bottom.png')"></v-img>
             </v-flex>
         </v-layout>
     </section>

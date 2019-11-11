@@ -125,7 +125,7 @@
                 <!-- That image -->
                 <v-img
                 contain
-                src="https://material-portfolio-dark.vuetifyjs.com/img/john.d70ed315.png"
+                :src="require('@/assets/pic_abs.png')"
                 style="height: 100%; margin-right: -48px;">
                 </v-img>
             </v-flex>
