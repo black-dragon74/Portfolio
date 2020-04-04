@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="https://nicksuniversum.com/favicon.png">
+    <link rel="manifest" href="manifest.json">
     <title>I am Nick</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
@@ -15,6 +16,22 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script type="text/javascript">
+      if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+          console.log("[PWA] active service worker found, no need to register");
+        } else {
+          // Register the service worker
+          navigator.serviceWorker
+                  .register("pwabuilder-sw.js", {
+                    scope: "./"
+                  })
+                  .then(function () {
+                    console.log("[PWA] Service worker has been registered");
+                  });
+        }
+      }
+    </script>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14.0/dist/smooth-scroll.polyfills.min.js"></script>
     <script>
       var scroll = new SmoothScroll('a[href*="#"]');

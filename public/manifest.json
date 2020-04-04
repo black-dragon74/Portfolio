@@ -1,0 +1,26 @@
+{
+  "dir" : "ltr",
+  "lang" : "en",
+  "name" : "I am Nick",
+  "scope" : "/",
+  "display" : "browser",
+  "start_url" : "https://portfolio.nicksuniversum.com/",
+  "short_name" : "I am Nick",
+  "theme_color" : "transparent",
+  "description" : "",
+  "orientation" : "any",
+  "background_color" : "transparent",
+  "related_applications" : [],
+  "prefer_related_applications" : false,
+  "icons" : [
+    {
+      "src": "https://portfolio.nicksuniversum.com/favicon.ico",
+      "sizes": "16x16"
+    },
+    {
+      "src": "https://nicksuniversum.com/favicon.png",
+      "sizes": "32x32"
+    }],
+  "url" : "https://portfolio.nicksuniversum.com",
+  "generated" : "true"
+}
