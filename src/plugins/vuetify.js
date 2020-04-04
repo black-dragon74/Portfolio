@@ -7,4 +7,4 @@ Vue.use(Vuetify, {
   theme: {
     primary: '#ffaa00'
   }
-})
+});

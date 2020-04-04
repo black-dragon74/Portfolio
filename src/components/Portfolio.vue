@@ -110,7 +110,7 @@ export default {
                     img: require('@/assets/work/take2.png')
                 },
                 {
-                    title: "Nick\'s Universum",
+                    title: "Nick's Universum",
                     subtitle: "Blogging Website",
                     desc: "A personal blogging website created by Nick for writing his feelings and thoughts. The website is fully responsive and provides a reader mode for true reading experience.",
                     lang: "Wordpress",
@@ -119,7 +119,7 @@ export default {
                     img: require('@/assets/work/blog.png')
                 },
                 {
-                    title: "Nick\'s Portfolio",
+                    title: "Nick's Portfolio",
                     subtitle: "This portfolio website",
                     desc: "A personal portfolio created in 1 day just because I was getting bored and also it can be used to showcase my work.",
                     lang: "Vue.JS",

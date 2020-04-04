@@ -18,7 +18,9 @@
 
             <!-- Buttons -->
             <div v-for="item in navItems" :key="item.title">
-                <v-btn class="mb-3 text-capitalize subheading font-weight-medium" flat dark :href="item.link">{{ item.title }}</v-btn>
+                <router-link :to="item.link">
+                    <v-btn class="mb-3 text-capitalize subheading font-weight-medium" flat dark :href="item.link">{{ item.title }}</v-btn>
+                </router-link>
             </div>
 
             <!-- Social Icons -->
@@ -45,12 +47,12 @@ export default {
     data () {
         return {
             navItems: [
-                {"title": "Hey", "link": "#"},
-                {"title": "About Me", "link": "#about"},
-                {"title": "Experience", "link": "#experience"},
-                {"title": "Skills & Education", "link": "#skills"},
-                {"title": "Portfolio", "link": "#portfolio"},
-                {"title": "Contact", "link": "#contact"}
+                {"title": "Hey", "link": "/"},
+                {"title": "About Me", "link": "/about"},
+                {"title": "Experience", "link": "/experience"},
+                {"title": "Skills & Education", "link": "/skills"},
+                {"title": "Portfolio", "link": "/portfolio"},
+                {"title": "Contact", "link": "/contact"}
             ],
 
             socialIcons: [
