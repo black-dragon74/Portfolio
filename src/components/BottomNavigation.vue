@@ -5,7 +5,7 @@
             fixed
             grow
             id="mobile-bottom-nav"
-            class="hidden-md-and-up"
+            class="hidden-md-and-up pl-4 pr-4"
     >
         <v-btn
                 v-for="item in navItems"
