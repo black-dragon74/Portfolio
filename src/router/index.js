@@ -41,6 +41,11 @@ const routes = [
         name: "Contact",
         path: "/contact",
         component: () => import("../components/Contact")
+    },
+    {
+        name: "404",
+        path: "*",
+        component: () => import("../components/404")
     }
 ];
 
