@@ -4,29 +4,30 @@
     <Drawer />
 
     <v-content class="hide-overflow" style="padding-left: 300px" id="mainContent">
-      <div>
-        <!-- The background image cover with the name -->
-        <Hero />
+<!--      <div>-->
+<!--        &lt;!&ndash; The background image cover with the name &ndash;&gt;-->
+<!--        <Hero />-->
 
-        <!-- The parent div that will contain the rest of the sections for our SPA -->
-        <div class="container py-5 px-0 fluid">
-            <!-- The about me section -->
-            <About />
+<!--        &lt;!&ndash; The parent div that will contain the rest of the sections for our SPA &ndash;&gt;-->
+<!--        <div class="container py-5 px-0 fluid">-->
+<!--            &lt;!&ndash; The about me section &ndash;&gt;-->
+<!--            <About />-->
 
-            <!-- The experience section -->
-            <Experience />
+<!--            &lt;!&ndash; The experience section &ndash;&gt;-->
+<!--            <Experience />-->
 
-            <!-- The skills section -->
-            <Skills />
+<!--            &lt;!&ndash; The skills section &ndash;&gt;-->
+<!--            <Skills />-->
 
-            <!-- The portfolio section -->
-            <Portfolio />
+<!--            &lt;!&ndash; The portfolio section &ndash;&gt;-->
+<!--            <Portfolio />-->
 
-            <!-- The contact section, last one :D -->
-            <Contact />
-        </div>
+<!--            &lt;!&ndash; The contact section, last one :D &ndash;&gt;-->
+<!--            <Contact />-->
+<!--        </div>-->
 
-      </div>
+<!--      </div>-->
+        <router-view/>
     </v-content>
   </v-app>
 </template>
@@ -37,12 +38,12 @@ export default {
   name: 'App',
   components: {
     Drawer: () => import('@/components/Drawer'),
-    Hero: () => import('@/components/Hero'),
-    About: () => import('@/components/About'),
-    Experience: () => import('@/components/Experience'),
-    Skills: () => import('@/components/Skills'),
-    Portfolio: () => import('@/components/Portfolio'),
-    Contact: () => import('@/components/Contact')
+    // Hero: () => import('@/components/Hero'),
+    // About: () => import('@/components/About'),
+    // Experience: () => import('@/components/Experience'),
+    // Skills: () => import('@/components/Skills'),
+    // Portfolio: () => import('@/components/Portfolio'),
+    // Contact: () => import('@/components/Contact')
   },
   data () {
     return {
