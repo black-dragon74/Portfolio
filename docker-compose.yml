@@ -3,6 +3,6 @@ version: '3'
 services:
   portfolio:
     ports:
-      - "2974:8080"
+      - "2974:80"
     restart: always
     build: .

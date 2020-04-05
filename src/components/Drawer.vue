@@ -17,11 +17,13 @@
             <span class="title font-weight-light mb-5">Software Engineer</span>
 
             <!-- Buttons -->
-            <div v-for="item in navItems" :key="item.title">
-                <router-link :to="item.link">
-                    <v-btn class="mb-3 text-capitalize subheading font-weight-medium" flat dark :href="item.link">{{ item.title }}</v-btn>
-                </router-link>
-            </div>
+            <v-btn v-for="item in navItems"
+                   :key="item.title"
+                   flat dark :to="item.link"
+                   class="mb-3 text-capitalize subheading font-weight-medium"
+            >
+                {{ item.title }}
+            </v-btn>
 
             <!-- Social Icons -->
             <div class="mt-auto">
@@ -43,25 +45,17 @@
 </template>
 
 <script>
+    import navItems from "../router/route-info";
 export default {
-    data () {
-        return {
-            navItems: [
-                {"title": "Hey", "link": "/"},
-                {"title": "About Me", "link": "/about"},
-                {"title": "Experience", "link": "/experience"},
-                {"title": "Skills & Education", "link": "/skills"},
-                {"title": "Portfolio", "link": "/portfolio"},
-                {"title": "Contact", "link": "/contact"}
-            ],
-
-            socialIcons: [
-                {"name": "Facebook", "link": "https://fb.me/ydvnick", "icon": "mdi-facebook"},
-                {"name": "Github", "link": "https://github.com/black-dragon74", "icon": "mdi-github-circle"},
-                {"name": "Telegram", "link": "https://t.me/ydvnick", "icon": "mdi-telegram"},
-            ]
-        }
-    }
+    name: 'Drawer',
+    data: () => ({
+        navItems,
+        socialIcons: [
+            {"name": "Facebook", "link": "https://fb.me/ydvnick", "icon": "mdi-facebook"},
+            {"name": "Github", "link": "https://github.com/black-dragon74", "icon": "mdi-github-circle"},
+            {"name": "Telegram", "link": "https://t.me/ydvnick", "icon": "mdi-telegram"},
+        ]
+    })
 }
 </script>
 

@@ -29,6 +29,7 @@
 <!--      </div>-->
         <router-view/>
     </v-content>
+      <BottomNavigation/>
   </v-app>
 </template>
 
@@ -38,12 +39,7 @@ export default {
   name: 'App',
   components: {
     Drawer: () => import('@/components/Drawer'),
-    // Hero: () => import('@/components/Hero'),
-    // About: () => import('@/components/About'),
-    // Experience: () => import('@/components/Experience'),
-    // Skills: () => import('@/components/Skills'),
-    // Portfolio: () => import('@/components/Portfolio'),
-    // Contact: () => import('@/components/Contact')
+    BottomNavigation: () => import('@/components/BottomNavigation')
   },
   data () {
     return {
@@ -57,7 +53,8 @@ export default {
 <style>
 @media screen and (max-width: 960px) {
   #mainContent {
-    padding-left: 0 !important;
+      padding-left: 0 !important;
+      max-height: calc(100% - 48px);
   }
 
   #mainDrawer {

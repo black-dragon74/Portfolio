@@ -1,7 +1,8 @@
 <template>
     <v-img
             :src="heroImage"
-            style="height: 100vh;">
+            id="heroImageIDLocal"
+    >
 
             <v-layout
             fill-height
@@ -30,6 +31,14 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
+    #heroImageIDLocal {
+        height: 100vh;
+    }
 
+    @media screen and (max-width: 960px) {
+        #heroImageIDLocal {
+            height: calc(100vh - 48px);
+        }
+    }
 </style>
