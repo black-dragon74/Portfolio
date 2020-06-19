@@ -7,7 +7,14 @@
 
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Hero from "../components/Hero";
+import {
+    Hero,
+    About,
+    Skills,
+    Portfolio,
+    Experience,
+    Contact
+} from "../components/Components";
 
 Vue.use(VueRouter);
 
@@ -20,27 +27,27 @@ const routes = [
     {
         name: "About",
         path: "/about",
-        component: () => import("../components/About")
+        component: About
     },
     {
         name: "Experience",
         path: "/experience",
-        component: () => import("../components/Experience")
+        component: Experience
     },
     {
         name: "Skills",
         path: "/skills",
-        component: () => import("../components/Skills")
+        component: Skills
     },
     {
         name: "Portfolio",
         path: "/portfolio",
-        component: () => import("../components/Portfolio")
+        component: Portfolio
     },
     {
         name: "Contact",
         path: "/contact",
-        component: () => import("../components/Contact")
+        component: Contact
     },
     {
         name: "404",
